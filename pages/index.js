@@ -1,6 +1,6 @@
 const { Configuration, OpenAIApi } = require("openai")
 import { useState } from "react"
-import { prompt } from "./questions"
+import { prompt } from "../lib/questions"
 
 const configuration = new Configuration({
 	apiKey: process.env.OPENAI_API_KEY,
