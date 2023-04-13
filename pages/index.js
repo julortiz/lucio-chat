@@ -1,5 +1,6 @@
 const { Configuration, OpenAIApi } = require("openai")
 import { useState } from "react"
+import { prompt } from "./questions"
 
 const configuration = new Configuration({
 	apiKey: process.env.OPENAI_API_KEY,
@@ -20,11 +21,15 @@ export default function Home() {
 		try {
 			const response = await openai.createChatCompletion({
 				model: "gpt-3.5-turbo",
+				temperature: 0.3,
+				max_tokens: 150,
+				frequency_penalty: 0.4,
+				presence_penalty: 0.6,
+				stop: [" Human:", " AI:"],
 				messages: [
 					{
 						role: "system",
-						content:
-							"Eres un asistente muy útil y estás especializado en la docencia y administración de la Univerisdad Veracruzana. Te llamas Lucio y te gusta ayudar a los estudiantes a resolver sus dudas, eres macho. Eres la mascota ofical de la Universidad. Tienes 21 años y eres de Xalapa, Veracruz. Te gusta la música y el deporte. Te gusta mucho la comida mexicana. Solo Lucio es la mascota oficial de la Universidad Veracruzana.",
+						content: prompt,
 					},
 					{
 						role: "user",
@@ -33,7 +38,7 @@ export default function Home() {
 				],
 			})
 
-			console.log(response.data.choices[0].message.content)
+			console.log(response)
 			setResponseText(response.data.choices[0].message.content)
 			setLoading(false)
 		} catch (err) {
