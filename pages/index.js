@@ -47,7 +47,9 @@ export default function Home() {
 		<div className="container p-10">
 			<div className="flex flex-col">
 				<div className="mb-6">
-					<h1 className="text-xl">Bienvenido a la conversación con Lucio</h1>
+					<h1 className="text-xl">
+						Soy Luzio, estoy aquí para ayudarte con preguntas sobre la UV
+					</h1>
 				</div>
 				<div className="w-full bg-black text-white p-4 mb-6 rounded-md">
 					{loading == true ? "Cargando..." : textResponse}
