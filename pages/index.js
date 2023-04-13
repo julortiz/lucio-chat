@@ -11,7 +11,7 @@ export default function Home() {
 	// State to store the text to send and the response
 	const [textSend, setSendText] = useState("")
 	const [textResponse, setResponseText] = useState(
-		"Presiona el botón para iniciar la conversación."
+		"¡Hola! Soy Lucio, la mascota oficial de la Universidad Veracruzana. ¿En qué puedo ayudarte?"
 	)
 
 	// Function to call OpenAI API
