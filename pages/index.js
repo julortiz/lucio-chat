@@ -12,7 +12,7 @@ export default function Home() {
 	// State to store the text to send and the response
 	const [textSend, setSendText] = useState("")
 	const [textResponse, setResponseText] = useState(
-		"¡Hola! Soy Lucio, la mascota oficial de la Universidad Veracruzana. ¿En qué puedo ayudarte?"
+		"¡Hola! Soy Luzio, la mascota oficial de la Universidad Veracruzana. ¿En qué puedo ayudarte?"
 	)
 
 	// Function to call OpenAI API
@@ -20,12 +20,9 @@ export default function Home() {
 		setLoading(true)
 		try {
 			const response = await openai.createChatCompletion({
-				model: "gpt-3.5-turbo",
-				temperature: 0.3,
-				max_tokens: 150,
-				frequency_penalty: 0.4,
-				presence_penalty: 0.6,
-				stop: [" Human:", " AI:"],
+				model: "gpt-4",
+				temperature: 0.2,
+				max_tokens: 200,
 				messages: [
 					{
 						role: "system",
