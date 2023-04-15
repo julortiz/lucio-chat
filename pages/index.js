@@ -20,7 +20,7 @@ export default function Home() {
 		setLoading(true)
 		try {
 			const response = await openai.createChatCompletion({
-				model: "gpt-4",
+				model: "gpt-3.5-turbo",
 				temperature: 0.2,
 				max_tokens: 200,
 				messages: [
